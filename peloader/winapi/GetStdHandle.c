@@ -46,3 +46,4 @@ STATIC DWORD WINAPI GetFileType(HANDLE hFile)
 
 DECLARE_CRT_EXPORT("GetStdHandle", GetStdHandle);
 DECLARE_CRT_EXPORT("GetFileType", GetFileType);
+void load_GetStdHandle(){}

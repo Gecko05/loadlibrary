@@ -173,3 +173,4 @@ static WINAPI void RtlUnwind(PEXCEPTION_FRAME TargetFrame, PVOID TargetIp, PEXCE
 
 DECLARE_CRT_EXPORT("RaiseException", RaiseException);
 DECLARE_CRT_EXPORT("RtlUnwind", RtlUnwind);
+void load_Exception(){}

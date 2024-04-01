@@ -64,3 +64,4 @@ DECLARE_CRT_EXPORT("GetStartupInfoA", GetStartupInfoA);
 DECLARE_CRT_EXPORT("GetStartupInfoW", GetStartupInfoW);
 DECLARE_CRT_EXPORT("GetCommandLineA", GetCommandLineA);
 DECLARE_CRT_EXPORT("GetCommandLineW", GetCommandLineW);
+void load_GetStartupInfoW(){}

@@ -44,3 +44,4 @@ DECLARE_CRT_EXPORT("WTHelperGetProvCertFromChain", WTHelperGetProvCertFromChain)
 DECLARE_CRT_EXPORT("WTHelperGetProvSignerFromChain", WTHelperGetProvSignerFromChain);
 DECLARE_CRT_EXPORT("WTHelperProvDataFromStateData", WTHelperProvDataFromStateData);
 DECLARE_CRT_EXPORT("WinVerifyTrust", WinVerifyTrust);
+void load_WinTrust(){}

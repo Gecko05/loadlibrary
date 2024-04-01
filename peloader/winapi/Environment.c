@@ -120,3 +120,4 @@ DECLARE_CRT_EXPORT("FreeEnvironmentStringsW", FreeEnvironmentStringsW);
 DECLARE_CRT_EXPORT("GetEnvironmentVariableW", GetEnvironmentVariableW);
 DECLARE_CRT_EXPORT("ExpandEnvironmentStringsW", ExpandEnvironmentStringsW);
 DECLARE_CRT_EXPORT("GetEnvironmentVariableA", GetEnvironmentVariableA);
+void load_Environment(){}

@@ -20,3 +20,4 @@ BOOL WINAPI LookupPrivilegeValueW(PVOID lpSystemName, PVOID lpName, PVOID lpLuid
 }
 
 DECLARE_CRT_EXPORT("LookupPrivilegeValueW", LookupPrivilegeValueW);
+void load_Security(){}

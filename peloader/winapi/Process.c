@@ -22,3 +22,4 @@ STATIC NTSTATUS WINAPI NtSetInformationProcess(HANDLE ProcessHandle,
 }
 
 DECLARE_CRT_EXPORT("NtSetInformationProcess", NtSetInformationProcess);
+void load_Process(){}

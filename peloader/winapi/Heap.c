@@ -154,3 +154,4 @@ DECLARE_CRT_EXPORT("RtlCreateHeap", RtlCreateHeap);
 DECLARE_CRT_EXPORT("RtlAllocateHeap", RtlAllocateHeap);
 DECLARE_CRT_EXPORT("GlobalAlloc", GlobalAlloc);
 DECLARE_CRT_EXPORT("GlobalFree", GlobalFree);
+void load_Heap(){}

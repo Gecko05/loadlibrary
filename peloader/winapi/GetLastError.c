@@ -28,3 +28,4 @@ void WINAPI SetLastError(DWORD dwErrCode)
 
 DECLARE_CRT_EXPORT("GetLastError", GetLastError);
 DECLARE_CRT_EXPORT("SetLastError", SetLastError);
+void load_GetLastError(){}

@@ -36,6 +36,8 @@ STATIC BOOL WINAPI TlsSetValue(DWORD dwTlsIndex, PVOID lpTlsValue)
     DebugLog("TlsSetValue(%u, %p)", dwTlsIndex, lpTlsValue);
 
     if (dwTlsIndex < ARRAY_SIZE(LocalStorage)) {
+        //int *ptrT = (int*)lpTlsValue;
+        //*ptrT = NULL;
         LocalStorage[dwTlsIndex] = (uintptr_t) (lpTlsValue);
         return TRUE;
     }
@@ -110,3 +112,4 @@ DECLARE_CRT_EXPORT("FlsFree", FlsFree);
 DECLARE_CRT_EXPORT("FlsAlloc", FlsAlloc);
 DECLARE_CRT_EXPORT("FlsSetValue", FlsSetValue);
 DECLARE_CRT_EXPORT("FlsGetValue", FlsGetValue);
+void load_TlsAlloc(){}

@@ -57,3 +57,4 @@ DECLARE_CRT_EXPORT("CoInitializeEx", CoInitializeEx);
 DECLARE_CRT_EXPORT("CoSetProxyBlanket", CoSetProxyBlanket);
 DECLARE_CRT_EXPORT("CoUninitialize", CoUninitialize);
 DECLARE_CRT_EXPORT("IIDFromString", IIDFromString);
+void load_Ole(){}

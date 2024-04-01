@@ -31,3 +31,7 @@ STATIC PVOID WINAPI DecodePointer(PVOID Ptr)
 
 DECLARE_CRT_EXPORT("EncodePointer", EncodePointer);
 DECLARE_CRT_EXPORT("DecodePointer", DecodePointer);
+
+void loadEncodePointer(){
+    
+}void load_EncodePointer(){}

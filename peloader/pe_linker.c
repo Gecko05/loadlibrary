@@ -41,6 +41,8 @@
 #include "util.h"
 #include "log.h"
 
+#include "CriticalSection.h"
+
 struct pe_exports {
         char *dll;
         char *name;
@@ -103,6 +105,46 @@ static RTL_BITMAP TlsBitmap = {
 struct hsearch_data extraexports;
 struct hsearch_data crtexports;
 
+// This is a workaround for a linkage error.
+void __constructor loadWinAPI(void) {
+        loadIsProcessor();
+        load_CriticalSection();
+        load_Crypt();
+        load_Debugger();
+        load_EncodePointer();
+        load_Environment();
+        load_Event();
+        load_EventTracing();
+        load_Exception();
+        load_Files();
+        load_GetLastError();
+        load_GetStartupInfoW();
+        load_GetStdHandle();
+        load_GetSystemDirectory();
+        load_Handle();
+        load_Heap();
+        load_InitializeSListHead();
+        load_Internal();
+        load_IsProcessorFeaturePresent();
+        load_LoadLibrary();
+        load_Locale();
+        load_Memory();
+        load_Ole();
+        load_Paths();
+        load_Process();
+        load_ProcessThreads();
+        load_Registry();
+        load_rtlbitmap();
+        load_Security();
+        load_Strings();
+        load_SystemTime();
+        load_Threads();
+        load_TlsAlloc();
+        load_Version();
+        load_Wer();
+        load_WinTrust();
+}
+
 void __destructor clearexports(void)
 {
     hdestroy_r(&crtexports);
@@ -127,14 +169,37 @@ void * get_export_address(const char *name)
     return NULL;
 }
 
+void trimKernel32(const char *inputString, char *outputString) {
+    // Find the position of "KERNEL32.dll" in the input string
+    const char *kernel32Position = strstr(inputString, "KERNEL32.dll");
+
+    if (kernel32Position != NULL) {
+        // Copy the part before "KERNEL32.dll" to the output string
+        strncpy(outputString, inputString, kernel32Position - inputString);
+
+        // Append the part after "KERNEL32.dll"
+        strcpy(outputString + (kernel32Position - inputString), kernel32Position + strlen("KERNEL32.dll"));
+    } else {
+        // If "KERNEL32.dll" is not found, just copy the input string
+        strcpy(outputString, inputString);
+    }
+}
+
 int get_export(const char *name, void *result)
 {
+        // TODO: FREE MEMORY!
+        //char newName[256];
+        //trimKernel32(name, newName);
+        //printf("New Name: %s\n", newName);
         ENTRY key = { (char *)(name) }, *item;
         int i, j;
         void **func = result;
 
+        //printf("Size: %i\n", crtexports.size);
         if (crtexports.size) {
+            //printf("Looking for: %s\n", name);
             if (hsearch_r(key, FIND, &item, &crtexports)) {
+                //printf("Found\n");
                 *func = item->data;
                 return 0;
             }
@@ -156,7 +221,9 @@ int get_export(const char *name, void *result)
         }
 
         // Search PE exports
+        //printf("Num_pe_exports: %i\n", num_pe_exports);
         for (i = 0; i < num_pe_exports; i++)
+                //printf("pe exports: %s\n", pe_exports[i].name);
                 if (strcmp(pe_exports[i].name, name) == 0) {
                         *func = pe_exports[i].addr;
                         return 0;
@@ -281,6 +348,7 @@ static int import(void *image, IMAGE_IMPORT_DESCRIPTOR *dirent, char *dll)
                 }
 
                 if (get_export(symname, &adr) < 0) {
+                        //printf("unknown symbol: %s:%s", dll, symname);
                         ERROR("unknown symbol: %s:%s", dll, symname);
                         address_tbl[i] = (ULONG) unknown_symbol_stub;
                         continue;

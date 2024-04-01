@@ -371,3 +371,4 @@ DECLARE_CRT_EXPORT("GetFullPathNameW", GetFullPathNameW);
 DECLARE_CRT_EXPORT("SetEndOfFile", SetEndOfFile);
 DECLARE_CRT_EXPORT("QueryDosDeviceW", QueryDosDevice);
 DECLARE_CRT_EXPORT("GetDiskFreeSpaceExW", GetDiskFreeSpaceExW);
+void load_Files(){}

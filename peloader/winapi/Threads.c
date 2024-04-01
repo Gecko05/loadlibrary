@@ -7,6 +7,8 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#include <stdio.h>
+
 #include "winnt_types.h"
 #include "pe_linker.h"
 #include "ntoskernel.h"
@@ -87,6 +89,9 @@ static __stdcall void WaitForThreadpoolWorkCallbacks(PVOID pwk, BOOL fCancelPend
     DebugLog("%p %d", pwk, fCancelPendingCallbacks);
 }
 
+void doDisTooTooToo(){
+    printf("I'm doing this too too too!\n");
+}
 
 DECLARE_CRT_EXPORT("CreateThreadPoolWait", CreateThreadPoolWait);
 DECLARE_CRT_EXPORT("CreateThreadPool", CreateThreadPool);
@@ -113,3 +118,4 @@ DECLARE_CRT_EXPORT("StartThreadpoolIo", StartThreadpoolIo);
 DECLARE_CRT_EXPORT("WaitForThreadpoolIoCallbacks", WaitForThreadpoolIoCallbacks);
 DECLARE_CRT_EXPORT("WaitForThreadpoolWaitCallbacks", WaitForThreadpoolWaitCallbacks);
 DECLARE_CRT_EXPORT("WaitForThreadpoolWorkCallbacks", WaitForThreadpoolWorkCallbacks);
+void load_Threads(){}

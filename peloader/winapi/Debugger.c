@@ -25,3 +25,7 @@ static BOOL WINAPI IsDebuggerPresent()
 }
 
 DECLARE_CRT_EXPORT("IsDebuggerPresent", IsDebuggerPresent);
+
+void loadDebugger(){
+    
+}void load_Debugger(){}

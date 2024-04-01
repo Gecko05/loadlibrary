@@ -216,3 +216,4 @@ DECLARE_CRT_EXPORT("NtQueryValueKey", NtQueryValueKey);
 DECLARE_CRT_EXPORT("RegCreateKeyExW", RegCreateKeyExW);
 DECLARE_CRT_EXPORT("RegQueryValueExW", RegQueryValueExW);
 
+void load_Registry(){}

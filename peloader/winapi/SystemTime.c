@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdio.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdbool.h>
@@ -11,6 +12,7 @@
 #include "log.h"
 #include "winexports.h"
 #include "util.h"
+#include "CriticalSection.h"
 
 typedef struct _SYSTEMTIME {
   WORD wYear;
@@ -112,6 +114,10 @@ STATIC BOOL WINAPI FileTimeToSystemTime(PFILETIME lpFileTime, PSYSTEMTIME lpSyst
     return FALSE;
 }
 
+void doDisToo(void){ 
+    printf("I'm doing this too!\n");
+}
+
 DECLARE_CRT_EXPORT("GetSystemTime", GetSystemTime);
 DECLARE_CRT_EXPORT("SystemTimeToFileTime", SystemTimeToFileTime);
 DECLARE_CRT_EXPORT("GetSystemTimePreciseAsFileTime", GetSystemTimePreciseAsFileTime);
@@ -123,3 +129,4 @@ DECLARE_CRT_EXPORT("GetTickCount64", GetTickCount64);
 DECLARE_CRT_EXPORT("GetProcessTimes", GetProcessTimes);
 DECLARE_CRT_EXPORT("DosDateTimeToFileTime", DosDateTimeToFileTime);
 DECLARE_CRT_EXPORT("FileTimeToSystemTime", FileTimeToSystemTime);
+void load_SystemTime(){}

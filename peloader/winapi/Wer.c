@@ -20,3 +20,4 @@ HRESULT WINAPI WerRegisterMemoryBlock(PVOID pvAddress,
 }
 
 DECLARE_CRT_EXPORT("WerRegisterMemoryBlock", WerRegisterMemoryBlock);
+void load_Wer(){}

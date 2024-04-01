@@ -71,3 +71,4 @@ DECLARE_CRT_EXPORT("GetLogicalDrives", GetLogicalDrives);
 DECLARE_CRT_EXPORT("GetDriveTypeW", GetDriveTypeW);
 DECLARE_CRT_EXPORT("GetLongPathNameA", GetLongPathNameA);
 DECLARE_CRT_EXPORT("GetLongPathNameW", GetLongPathNameW);
+void load_Paths(){}

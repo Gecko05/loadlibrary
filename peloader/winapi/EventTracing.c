@@ -50,3 +50,4 @@ static ULONG WINAPI EventActivityIdControl(ULONG ControlCode, LPGUID ActivityId)
 DECLARE_CRT_EXPORT("EventActivityIdControl", EventActivityIdControl);
 DECLARE_CRT_EXPORT("RegisterTraceGuidsW", RegisterTraceGuidsW);
 DECLARE_CRT_EXPORT("UnregisterTraceGuids", UnregisterTraceGuids);
+void load_EventTracing(){}

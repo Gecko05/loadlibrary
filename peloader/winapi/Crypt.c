@@ -323,3 +323,6 @@ DECLARE_CRT_EXPORT("CryptSetHashParam", CryptSetHashParam);
 DECLARE_CRT_EXPORT("CryptVerifySignatureW", CryptVerifySignatureW);
 DECLARE_CRT_EXPORT("CryptDestroyHash", CryptDestroyHash);
 
+void loadCrypt(){
+    
+}void load_Crypt(){}

@@ -90,3 +90,4 @@ DECLARE_CRT_EXPORT("LocaleNameToLCID", LocaleNameToLCID);
 DECLARE_CRT_EXPORT("LCMapStringW", LCMapStringW);
 DECLARE_CRT_EXPORT("LCMapStringEx", LCMapStringEx);
 DECLARE_CRT_EXPORT("GetLocaleInfoEx", GetLocaleInfoEx);
+void load_Locale(){}

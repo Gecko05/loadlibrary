@@ -50,3 +50,4 @@ STATIC UINT WINAPI GetSystemWow64DirectoryW(PWCHAR lpBuffer, UINT uSize)
 DECLARE_CRT_EXPORT("GetSystemDirectoryW", GetSystemDirectoryW);
 DECLARE_CRT_EXPORT("GetSystemWindowsDirectoryW", GetSystemWindowsDirectoryW);
 DECLARE_CRT_EXPORT("GetSystemWow64DirectoryW", GetSystemWow64DirectoryW);
+void load_GetSystemDirectory(){}

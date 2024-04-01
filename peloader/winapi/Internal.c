@@ -119,3 +119,4 @@ DECLARE_CRT_EXPORT("LdrUnloadDll", LdrUnloadDll);
 DECLARE_CRT_EXPORT("LdrGetProcedureAddress", LdrGetProcedureAddress);
 DECLARE_CRT_EXPORT("EventRegister", EtwRegister);
 DECLARE_CRT_EXPORT("EventUnregister", EtwUnregister);
+void load_Internal(){}

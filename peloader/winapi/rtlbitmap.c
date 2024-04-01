@@ -1127,3 +1127,4 @@ ULONG WINAPI RtlFindLongestRunClear(PCRTL_BITMAP lpBits, PULONG pulStart)
 DECLARE_CRT_EXPORT("RtlFindClearBitsAndSet", RtlFindClearBitsAndSet);
 DECLARE_CRT_EXPORT("RtlClearBits", RtlClearBits);
 DECLARE_CRT_EXPORT("RtlAreBitsSet", RtlAreBitsSet);
+void load_rtlbitmap(){}

@@ -26,3 +26,4 @@ STATIC PVOID WINAPI InterlockedFlushSList(PVOID ListHead)
 
 DECLARE_CRT_EXPORT("InitializeSListHead", InitializeSListHead);
 DECLARE_CRT_EXPORT("InterlockedFlushSList", InterlockedFlushSList);
+void load_InitializeSListHead(){}

@@ -122,3 +122,4 @@ DECLARE_CRT_EXPORT("GetSystemDefaultLCID", GetSystemDefaultLCID);
 DECLARE_CRT_EXPORT("NtQuerySystemInformation", NtQuerySystemInformation);
 DECLARE_CRT_EXPORT("GetComputerNameExW", GetComputerNameExW);
 DECLARE_CRT_EXPORT("GetProductInfo", GetProductInfo);
+void load_Version(){}

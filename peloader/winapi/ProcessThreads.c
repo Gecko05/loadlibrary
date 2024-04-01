@@ -2,6 +2,9 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
+
+#include <stdio.h>
+
 #include <string.h>
 #include <stdbool.h>
 #include <search.h>
@@ -180,6 +183,10 @@ static BOOL WINAPI ProcessIdToSessionId(DWORD dwProcessId, DWORD *pSessionId)
     return FALSE;
 }
 
+void doProcessThreads(void){
+    printf("Doing Process Threads\n");
+}
+
 DECLARE_CRT_EXPORT("RtlNtStatusToDosError", RtlNtStatusToDosError);
 DECLARE_CRT_EXPORT("GetThreadTimes", GetThreadTimes);
 DECLARE_CRT_EXPORT("GetCurrentThread", GetCurrentThread);
@@ -203,3 +210,4 @@ DECLARE_CRT_EXPORT("WaitForThreadpoolTimerCallbacks", WaitForThreadpoolTimerCall
 DECLARE_CRT_EXPORT("GetCurrentThreadId", GetCurrentThreadId);
 DECLARE_CRT_EXPORT("GetCurrentProcessId", GetCurrentProcessId);
 DECLARE_CRT_EXPORT("ProcessIdToSessionId", ProcessIdToSessionId);
+void load_ProcessThreads(){}

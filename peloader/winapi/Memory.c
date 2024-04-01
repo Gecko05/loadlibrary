@@ -67,3 +67,4 @@ DECLARE_CRT_EXPORT("VirtualAlloc", VirtualAlloc);
 DECLARE_CRT_EXPORT("VirtualProtect", VirtualProtect);
 DECLARE_CRT_EXPORT("VirtualUnlock", VirtualUnlock);
 DECLARE_CRT_EXPORT("VirtualFree", VirtualFree);
+void load_Memory(){}

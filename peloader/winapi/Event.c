@@ -50,3 +50,4 @@ static BOOL WINAPI ResetEvent(HANDLE hEvent)
 DECLARE_CRT_EXPORT("CreateEventW", CreateEventW);
 DECLARE_CRT_EXPORT("SetEvent", SetEvent);
 DECLARE_CRT_EXPORT("ResetEvent", ResetEvent);
+void load_Event(){}

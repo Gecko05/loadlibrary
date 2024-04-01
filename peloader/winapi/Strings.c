@@ -225,3 +225,4 @@ DECLARE_CRT_EXPORT("UuidFromStringW", UuidFromStringW);
 DECLARE_CRT_EXPORT("UuidCreate", UuidCreate);
 DECLARE_CRT_EXPORT("CompareStringOrdinal", CompareStringOrdinal);
 
+void load_Strings(){}

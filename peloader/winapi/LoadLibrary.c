@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdio.h>
 #include <stddef.h>
 #include <string.h>
 #include <stdbool.h>
@@ -113,3 +114,4 @@ DECLARE_CRT_EXPORT("GetModuleHandleW", GetModuleHandleW);
 DECLARE_CRT_EXPORT("GetModuleHandleA", GetModuleHandleA);
 DECLARE_CRT_EXPORT("GetModuleFileNameA", GetModuleFileNameA);
 DECLARE_CRT_EXPORT("GetModuleFileNameW", GetModuleFileNameW);
+void load_LoadLibrary(){}

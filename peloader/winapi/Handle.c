@@ -32,3 +32,4 @@ STATIC UINT WINAPI SetHandleCount(UINT handleCount)
 
 DECLARE_CRT_EXPORT("DuplicateHandle", DuplicateHandle);
 DECLARE_CRT_EXPORT("SetHandleCount", SetHandleCount);
+void load_Handle(){}
